@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" 
+controller="ContactDialButtonController" access="global" >
+    <aura:attribute name="AccountRecord" type="Account[]"/> 
+    <aura:attribute name="status" type="String"/> 
+   
+<form>
+    <aura:if isTrue="{!v.status}"> 
+        RECORD SAVED
+    </aura:if>
+    <lightning:input aura:id="accForm" label="Account Name"
+                     name="accName" value="{!v.AccountRecord.name}" required="true" />
+    
+    <lightning:button label="Save Account" onclick="{!c.createAccount}"/>
+    </form>
+    
+</aura:component>

@@ -1,0 +1,7 @@
+<aura:component controller="CreateCaseFromContactController" 
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId">
+	
+    <aura:attribute name="recordId" type="ID" description="ID of a Lead record"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+</aura:component>

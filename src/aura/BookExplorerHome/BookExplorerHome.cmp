@@ -1,0 +1,5 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	 <div style="width:100%" class="slds-align--absolute-center">
+        <c:DialButton />
+    </div>
+</aura:component>

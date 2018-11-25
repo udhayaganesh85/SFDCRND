@@ -1,0 +1,119 @@
+<apex:page showHeader="false" standardController="Donation__c" extensions="donationUtil" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <META http-equiv="refresh" content="5"/>
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Feed Donation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+});
+ 
+</script>
+
+<style>
+ 
+
+input[type*="text"],input[type*="number"],textarea  {
+  font-size: 20px !important;
+}
+</style>
+</head>
+  <!-- Import the Design System style sheet -->
+  <apex:slds />
+</head>
+<body>
+<apex:form >
+
+   
+  <div class="slds-scope">
+   <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+  <span class="slds-assistive-text">info</span>
+  <span class="slds-icon_container slds-icon-utility-user slds-m-right_x-small" title="Description of icon when needed">
+    <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#user"></use>
+    </svg>
+  </span>
+  <h2>Logged in as Udhay Guest &nbsp; <a href="javascript:void(0);"> Sign Up</a></h2>
+  <button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
+    <svg class="slds-button__icon" aria-hidden="true">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+    </svg>
+    <span class="slds-assistive-text">Close</span>
+  </button>
+</div>
+<Div style="padding-top:30px;"> 
+
+</div>
+ <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+  <thead>
+    <tr class="slds-text-title_caps">
+      <th scope="col">
+        <div class="slds-truncate" title="Opportunity Name">Date</div>
+      </th>
+      <th scope="col">
+        <div class="slds-truncate" title="Account Name">Name</div>
+      </th>
+      <th scope="col">
+        <div class="slds-truncate" title="Close Date">Amount</div>
+      </th>
+      <th scope="col">
+        <div class="slds-truncate" title="Stage">Wish</div>
+      </th>
+      <th scope="col">
+        <div class="slds-truncate" title="Confidence">Address</div>
+      </th>
+      
+    </tr>
+  </thead>
+  <tbody>
+  
+ 
+     <apex:repeat value="{!donationView}" var="don" id="theRepeat">
+     <tr>
+        <td data-label="Account Name">
+         <apex:outputText value="{!don.enteredon__c}" id="theValue1"/> 
+        </td>
+        <td data-label="Account Name">
+         <apex:outputText value="{!don.PersonName__c}" id="theValue2"/> 
+        </td>
+        <td data-label="Account Name">
+         <apex:outputText value="{!don.amount__c}" id="theValue3"/> 
+        </td>
+        <td data-label="Account Name">
+         <apex:outputText value="{!don.personwishes__c}" id="theValue4"/> 
+        </td>
+        <td data-label="Account Name">
+         <apex:outputText value="{!don.personaddress__c}" id="theValue5"/> 
+        </td>
+     </tr>
+     </apex:repeat>
+    
+      
+  </tbody>
+</table>
+<div class="slds-docked-form-footer">
+<footer role="contentinfo" class="slds-p-around--small">
+ 
+  <div class="slds-grid slds-grid--align-spread">
+    <p class="slds-col">Copyrights </p>
+    <p class="slds-col">&copy; Udhay</p>
+  </div>
+  
+</footer>
+</div> 
+<!-- / FOOTER -->
+  </div>
+  <!-- / REQUIRED SLDS WRAPPER -->
+
+  <!-- JAVASCRIPT -->
+  <!-- / JAVASCRIPT -->
+  </apex:form>
+</body>
+</html>
+</apex:page>

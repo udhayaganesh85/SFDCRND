@@ -1,0 +1,32 @@
+<aura:component controller="LightningCtrl" implements="flexipage:availableForAllPageTypes" > 
+
+     <ltng:require styles="{!$Resource.lds + '/salesforce-lightning-design-system-ltng'}"/>
+   
+    <aura:handler name="init" value="{!this}" action="{!c.doInit1}" /> 
+
+    <aura:attribute name="rec" type="Object" /> 
+ 
+     <form class="slds-form--stacked">     
+    
+<ul style="background:lightblue"> 
+<lightning:card title="Contact List">
+    <div class="demo-only slds-grid" style="height: 845px; max-width: 420px; background: rgb(244, 246, 249); padding: 1rem;">
+        <p class="slds-p-horizontal--small">
+    <aura:iteration items="{!v.rec}" var="curr"> 
+
+            <li> 
+ <lightning:icon class="orangeOnBlack" iconName="custom:custom26" size="small"  /> &nbsp;&nbsp;&nbsp;
+ 
+                <ui:outputText value="{!curr.Name}"/><br/> 
+
+                <ui:outputText value="{!curr.Phone}"/><br/> 
+
+                <ui:outputText value="{!curr.Email}"/> <br/>
+                <hr/>
+            </li> 
+      
+        </aura:iteration> 
+        </p></div></lightning:card>
+    </ul> 
+    </form>
+</aura:component>

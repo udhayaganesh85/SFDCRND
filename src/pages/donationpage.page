@@ -1,0 +1,171 @@
+<apex:page showHeader="false" standardController="Donation__c" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Feed Donation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+});
+ 
+</script>
+
+<style>
+ 
+
+input[type*="text"],input[type*="number"],textarea  {
+  font-size: 20px !important;
+}
+</style>
+</head>
+  <!-- Import the Design System style sheet -->
+  <apex:slds />
+</head>
+<body>
+<apex:form >
+
+  <!-- REQUIRED SLDS WRAPPER -->
+  <div class="slds-scope">
+
+    <!-- MASTHEAD -->
+     <!-- / MASTHEAD -->
+
+  <!-- PAGE HEADER -->
+  <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+  <span class="slds-assistive-text">info</span>
+  <span class="slds-icon_container slds-icon-utility-user slds-m-right_x-small" title="Description of icon when needed">
+    <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#user"></use>
+    </svg>
+  </span>
+  <h2>Logged in as Udhay Guest &nbsp; <a href="javascript:void(0);"> Sign Up</a></h2>
+  <button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
+    <svg class="slds-button__icon" aria-hidden="true">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+    </svg>
+    <span class="slds-assistive-text">Close</span>
+  </button>
+</div>
+
+<div class="slds-page-header" role="banner">
+  <div class="slds-grid">
+    <div class="slds-col slds-has-flexi-truncate">
+      <h1 class="slds-page-header__title slds-truncate" title="Udhayaganesh">Everything is prewritten, nothing can be rewritten</h1>
+    </div>
+    <div class="slds-col slds-no-flex slds-grid slds-align-top">
+      
+      
+      <button class="slds-button slds-button--neutral">About Me</button>
+    </div>
+  </div>
+  </div>
+<!-- / PAGE HEADER -->
+    <!-- PRIMARY CONTENT WRAPPER -->
+    <!-- PRIMARY CONTENT WRAPPER -->
+    
+
+
+    <br/>
+<div class="myapp" style="padding-left:2%;padding-right:2%;">
+
+
+
+
+<div class="slds-form slds-form_stacked">
+<div class="slds-form-element">
+ <fieldset class="slds-form-element">
+    <legend class="slds-form-element__legend slds-form-element__label">Event</legend>
+    <div class="slds-form-element__control">
+      <span class="slds-radio">
+        <input type="radio" id="radio-1" name="options" value="on"/>
+        <label class="slds-radio__label" for="radio-1">
+          <span class="slds-radio_faux"></span>
+          <span class="slds-form-element__label">Marriage</span>
+        </label>
+     
+        <input type="radio" id="radio-2" name="options" value="on"/>
+        <label class="slds-radio__label" for="radio-2">
+          <span class="slds-radio_faux"></span>
+          <span class="slds-form-element__label">Fund Raise</span>
+        </label>
+      </span>
+    </div>
+    
+  </fieldset>
+    </div>
+<div class="slds-form-element">
+    <label class="slds-form-element__label" for="input-id-01">Date</label>
+    <div class="slds-form-element__control">
+     <p>{!MONTH(TODAY())}-{!DAY(TODAY())}-{!YEAR(TODAY())}</p>
+
+    </div>
+  </div>
+  <div class="slds-form-element">
+    <label class="slds-form-element__label" for="input-id-01">Person Name</label>
+    <div class="slds-form-element__control">
+       <apex:inputtext value="{!Donation__c.PersonName__c}" id="input-id-01" styleclass="slds-input" />
+    </div>
+  </div>
+  <div class="slds-form-element">
+    <label class="slds-form-element__label" for="input-id-02">Address</label>
+    <div class="slds-form-element__control">
+       <apex:inputtextarea value="{!Donation__c.personaddress__c}" id="input-id-011" styleclass="slds-input" />      
+    </div>
+  </div>
+  <div class="slds-form-element">
+    <label class="slds-form-element__label" for="input-id-02">Wishes</label>
+    <div class="slds-form-element__control">
+       <apex:inputtextarea value="{!Donation__c.personwishes__c}" id="input-id-0111" styleclass="slds-input" />      
+    </div>
+  </div>
+  <div class="slds-form-element">
+    <label class="slds-form-element__label" for="input-id-01">Amount</label>
+    <div class="slds-form-element__control">
+       <apex:inputField value="{!Donation__c.amount__c}" id="input-id-01111" styleclass="slds-input" />
+    </div>
+  </div>
+   <div class="slds-form-element">
+ <div class="slds-grid">
+  <div class="slds-col"></div>
+  <div class="slds-col">
+   <div class="slds-button-group" role="group">
+   <apex:commandButton styleclass="slds-button slds-button_neutral" action="{!save}" value="Save"></apex:commandButton> &nbsp;
+   <apex:commandButton styleclass="slds-button slds-button_neutral" value="Reset"></apex:commandButton> &nbsp;
+ <apex:commandButton styleclass="slds-button slds-button_neutral" value="Exit" onclick="window.exit();"></apex:commandButton> &nbsp;
+ 
+</div>
+</div>
+</div>
+</div>
+ 
+</div>
+</div>
+<!-- / PRIMARY CONTENT WRAPPER -->
+    <!-- / PRIMARY CONTENT WRAPPER -->
+
+<!-- FOOTER 
+<div class="slds-docked-form-footer">
+<footer role="contentinfo" class="slds-p-around--small">
+ 
+  <div class="slds-grid slds-grid--align-spread">
+    <p class="slds-col">Copyrights </p>
+    <p class="slds-col">&copy; Udhay</p>
+  </div>
+  
+</footer>
+</div>-->
+<!-- / FOOTER -->
+  </div>
+  <!-- / REQUIRED SLDS WRAPPER -->
+
+  <!-- JAVASCRIPT -->
+  <!-- / JAVASCRIPT -->
+  </apex:form>
+</body>
+</html>
+</apex:page>

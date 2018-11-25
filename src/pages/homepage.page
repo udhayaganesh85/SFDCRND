@@ -1,0 +1,266 @@
+<apex:page showHeader="false" controller="homecontroller" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script  src="https://www.googletagmanager.com/gtag/js?id=UA-125598523-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125598523-1');
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+
+
+$(document).ready(function(){
+var myURL = window.location.href;
+var n = myURL.includes("code");
+/*if(n == false)
+{
+window.open(
+  'https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=3MVG9CEn_O3jvv0zLoDC.MZAh33k4g2x1PSQOifar30rOtlh2FiHfvvMRt7.Nae.Qow2wUugzD8Jq1L0NfbCk&redirect_uri=https://c.na50.visual.force.com/apex/homepage&state=mystate',
+  '_self' // <- This is what makes it open in a new window.
+);
+}
+else
+{
+   var code = myURL.substring(myURL.indexOf('code=')+5,myURL.indexOf('&state=mystate'));
+   //code = code.replaceAll('%3D','=');
+   var hitmeURL = 'https://login.salesforce.com/services/oauth2/token?code='+code +'&grant_type=authorization_code&client_id=3MVG9CEn_O3jvv0zLoDC.MZAh33k4g2x1PSQOifar30rOtlh2FiHfvvMRt7.Nae.Qow2wUugzD8Jq1L0NfbCk&redirect_uri=https://c.na50.visual.force.com/apex/homepage&client_secret=5027917300796625623';
+   //var authWindow =  window.open(hitmeURL,'_self');
+  
+  
+  /*
+  $.get({
+         url:hitmeURL,
+         //data: { signature: authHeader },
+         //crossDomain: true,
+         //headers: {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"},
+         //headers : {Accept : "application/json","Access-Control-Allow-Origin" : "*"},
+         type: "GET",
+          crossOrigin : true,   /// Add this option 
+           dataType: "json",
+         beforeSend: function(xhr){
+         //xhr.setRequestHeader('Access-Control-Allow-Origin', 'https://c.na50.visual.force.com');
+         //xhr.setRequestHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');         
+         },
+          success: function(data, textStatus, request){
+        alert(data); //This prints the response with the header.
+
+   },
+          
+                 error: function(err) {
+                     alert('Error'+err); //err.responseText);
+                 }
+      });
+    */
+      
+    
+    $.get(hitmeURL, function( data ) {
+   
+  alert( "Load was performed."+data  );
+}).fail(function(jqXHR, textStatus, errorThrown) {
+ 
+ if (jqXHR.status == 0) {
+      alert(' Check Your Network.');
+    }
+    
+});
+
+
+}*/
+
+});
+function menuClick(event)
+{
+ $(".slds-nav-vertical__action").parent().removeClass("slds-is-active");
+  var activeTab = event.target.getAttribute("id");
+         $("#"+activeTab ).parent().addClass("slds-is-active");
+
+ }    
+
+</script>
+
+
+</head>
+  <!-- Import the Design System style sheet -->
+  <apex:slds />
+</head>
+<body>
+
+  <!-- REQUIRED SLDS WRAPPER -->
+  <div class="slds-scope">
+
+    <!-- MASTHEAD -->
+     <!-- / MASTHEAD -->
+
+  <!-- PAGE HEADER -->
+  <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+  <span class="slds-assistive-text">info</span>
+  <span class="slds-icon_container slds-icon-utility-user slds-m-right_x-small" title="Description of icon when needed">
+    <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#user"></use>
+    </svg>
+  </span>
+  <h2>Logged in as Udhay Guest &nbsp; <a href="javascript:void(0);"> Sign Up</a></h2>
+  <button class="slds-button slds-button_icon slds-notify__close slds-button_icon-inverse" title="Close">
+    <svg class="slds-button__icon" aria-hidden="true">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+    </svg>
+    <span class="slds-assistive-text">Close</span>
+  </button>
+</div>
+
+<div class="slds-page-header" role="banner">
+  <div class="slds-grid">
+    <div class="slds-col slds-has-flexi-truncate">
+      <h1 class="slds-page-header__title slds-truncate" title="Udhayaganesh">Everything is prewritten, nothing can be rewritten</h1>
+    </div>
+    <div class="slds-col slds-no-flex slds-grid slds-align-top">
+      
+      
+      <button class="slds-button slds-button--neutral">About Me</button>
+    </div>
+  </div>
+  </div>
+<!-- / PAGE HEADER -->
+    <!-- PRIMARY CONTENT WRAPPER -->
+    <!-- PRIMARY CONTENT WRAPPER -->
+    
+    <div style="padding-bottom:40px;"></div>
+
+    
+<div class="myapp" style="padding:3px;">
+
+
+
+
+
+<div class="demo-only" style="width: 320px;">
+  <nav class="slds-nav-vertical" aria-label="Sub page">
+    <div class="slds-nav-vertical__section">
+      <h1 id="entity-header" class="slds-nav-vertical__title slds-text-title_caps"><b>Climate Report</b></h1>
+      <ul>
+        <li class="slds-nav-vertical__item"><a href="/apex/Angular2Service" id="menu1"  class="slds-nav-vertical__action" aria-describedby="entity-header">Climate Info</a></li>
+        <li class="slds-nav-vertical__item"><a href="javascript:menuClick(this);" id="menu2"  class="slds-nav-vertical__action" aria-describedby="entity-header">Astrology</a></li>
+      </ul>
+    </div>
+    <div class="slds-nav-vertical__section">
+      <h1 id="folder-header" class="slds-nav-vertical__title slds-text-title_caps"><b>Gift</b></h1>
+      <ul>
+        <li class="slds-nav-vertical__item"><a href="/apex/donationpage" class="slds-nav-vertical__action" aria-describedby="folder-header">Donation</a></li>
+        <li class="slds-nav-vertical__item"><a href="/apex/dashboard" class="slds-nav-vertical__action" aria-describedby="folder-header">Dashboard</a></li>
+      </ul>
+    </div>
+    <div class="slds-nav-vertical__section">
+      <h1 id="folder-header" class="slds-nav-vertical__title slds-text-title_caps"><b>Gift</b></h1>
+      <ul>
+        <li class="slds-nav-vertical__item"><a href="/apex/donationpage" class="slds-nav-vertical__action" aria-describedby="folder-header">Donation</a></li>
+        <li class="slds-nav-vertical__item"><a href="/apex/dashboard" class="slds-nav-vertical__action" aria-describedby="folder-header">Dashboard</a></li>
+      </ul>
+    </div>
+    
+  </nav>
+</div>
+
+
+
+
+
+
+<!--
+
+<div class="slds-tree_container" role="application">
+  <fieldset class="slds-form-element">
+  <legend class="slds-form-element__legend slds-form-element__label">Select an app</legend>
+  <div class="slds-form-element__control">
+    <div class="slds-visual-picker slds-visual-picker_medium">
+      <input type="radio" id="visual-picker-1" name="options" value="on"></input>
+     
+      <label for="visual-picker-1">
+        <span class="slds-visual-picker__figure slds-visual-picker__icon slds-align_absolute-center">
+          <span class="slds-is-selected">
+            <span class="slds-icon_container" title="description of icon when needed">
+              <svg class="slds-icon slds-icon_large slds-icon-action-check" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/action-sprite/svg/symbols.svg#check"></use>
+              </svg>
+              <span class="slds-assistive-text">Provide description of icon</span>
+            </span>
+          </span>
+          <span class="slds-is-not-selected">
+            <span class="slds-icon_container" title="description of icon when needed">
+              <svg class="slds-icon slds-icon-utility-connected_apps slds-icon_large slds-icon-text-default" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#connected_apps"></use>
+              </svg>
+              <span class="slds-assistive-text">Provide description of icon</span>
+            </span>
+          </span>
+        </span>
+        <span class="slds-visual-picker__body">Connected App</span>
+      </label>
+    </div>
+    <div class="slds-visual-picker slds-visual-picker_medium">
+      <input type="radio" id="visual-picker-2" name="options" value="on"></input>
+      <label for="visual-picker-2">
+        <span class="slds-visual-picker__figure slds-visual-picker__icon slds-align_absolute-center">
+          <span class="slds-is-selected">
+            <span class="slds-icon_container" title="description of icon when needed">
+              <svg class="slds-icon slds-icon_large slds-icon-action-check" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/action-sprite/svg/symbols.svg#check"></use>
+              </svg>
+              <span class="slds-assistive-text">Provide description of icon</span>
+            </span>
+          </span>
+          <span class="slds-is-not-selected">
+            <span class="slds-icon_container" title="description of icon when needed">
+              <svg class="slds-icon slds-icon-utility-custom_apps slds-icon_large slds-icon-text-default" aria-hidden="true">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#custom_apps"></use>
+              </svg>
+              <span class="slds-assistive-text">Provide description of icon</span>
+            </span>
+          </span>
+        </span>
+        <span class="slds-visual-picker__body">Custom App</span>
+      </label>
+    </div>
+  </div>
+</fieldset>
+</div>
+-->
+</div>
+<!-- / PRIMARY CONTENT WRAPPER -->
+    <!-- / PRIMARY CONTENT WRAPPER -->
+
+<!-- FOOTER -->
+<div class="slds-docked-form-footer">
+<footer role="contentinfo" class="slds-p-around--large">
+  <!-- LAYOUT GRID -->
+  <div class="slds-grid slds-grid--align-spread">
+    <p class="slds-col">Copyrights </p>
+    <p class="slds-col">&copy; Udhay</p>
+  </div>
+  <!-- / LAYOUT GRID -->
+</footer>
+</div>
+<!-- / FOOTER -->
+  </div>
+  <!-- / REQUIRED SLDS WRAPPER -->
+
+  <!-- JAVASCRIPT -->
+  <!-- / JAVASCRIPT -->
+</body>
+</html>
+</apex:page>

@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes" 
+				access="global">
+				
+	    <!--<c:modalDialog title="Test"><p>Welcome to Book Explorer!</p></c:modalDialog>
+-->
+        <lightning:tabset >
+            <lightning:tab label="Home"
+                           title="Home">
+                <c:BookExplorerHome />
+            </lightning:tab>
+            <lightning:tab label="New Book"
+                           title="New">
+        
+            </lightning:tab>
+            <lightning:tab label="Book List"
+                           title="List">
+				 
+            </lightning:tab>
+            <lightning:tab label="Advanced Search"
+                           title="Search">
+                Advanced Search
+            </lightning:tab>
+        </lightning:tabset>
+</aura:component>

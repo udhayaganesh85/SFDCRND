@@ -1,0 +1,10 @@
+<aura:component >
+    <aura:attribute name="phoneNumber"
+                    type="String"
+                    access="GLOBAL"
+                    required="true" />
+  
+    <a href="{! 'tel:' +v.phoneNumber }">
+        <img src="{#$Resource.BookExplorer + '/images/call.png'}" class="roundbutton" />
+    </a>
+</aura:component>

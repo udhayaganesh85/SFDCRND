@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Astro News</title>
+<script>document.write('<base href="' + document.location + '" />');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+	color: #369;
+	font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+<script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+<script src="https://unpkg.com/zone.js?main=browser"></script>
+<script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
+<script src="systemjs.config.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script>
+      System.import('main.ts').catch(function(err){ console.error(err); });
+    </script>
+</head>
+<body>
+	<center>
+		<h3>Everything is prewritten, nothing can be rewritten</h3>
+	</center>
+	<my-app>Loading ... Please wait ...</my-app>
+</body>
+</html>

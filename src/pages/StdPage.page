@@ -1,0 +1,11 @@
+<apex:page standardController="opportunity"    extensions="FirstController" readOnly="false">
+  
+<apex:form >
+<apex:pagemessages />
+Enter Opp Name : <apex:inputField value="{!opp .name}"   />
+Enter Opp Stage: <apex:inputField value="{!opp .StageName}"   />
+Enter Date : <apex:inputField value="{!opp .closeDate}"   />
+  <apex:commandButton value="save" action="{!saveOpp}"/>
+  
+</apex:form>  
+</apex:page>

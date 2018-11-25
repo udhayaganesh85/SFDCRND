@@ -1,0 +1,24 @@
+<apex:page sidebar="false"  showHeader="false">
+    <apex:includeLightning />
+
+    <div id="lightning" />
+<apex:includeScript value="/lightning/lightning.out.js"/>    
+
+
+<script>
+      function initLookup() {
+      
+        $Lightning.use("c:SampleCmpApp", function () {
+        
+        $Lightning.createComponent("c:SampleCmp", {}, "lightning", function(cmp){});
+ 
+           
+        });
+      }
+      
+      initLookup();
+    </script>
+
+
+ 
+</apex:page>

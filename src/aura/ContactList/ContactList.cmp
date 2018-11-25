@@ -1,0 +1,36 @@
+<aura:component controller="ContactDialButtonController" access="global">
+<aura:attribute name="contactRows" type="Contact[]"/>
+<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+<aura:attribute name="message" type="String"/>
+ <aura:attribute name="term" type="String" default="Hellooooo"/>
+  
+    
+      
+<aura:registerEvent name="SearchEvent" type="c:SearchEvent" />
+    <div class="searchInput">
+    	<ui:inputText label="Term" aura:id="searchTerm" value="" placeholder="Enter Item" />
+    </div>
+    <ui:button label="Search" press="{!c.doSearch}" class="action-button" />
+    
+<div class="container">
+    <p>
+        <b> List of Contacts </b>
+    </p>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th><strong> Id </strong></th>
+                <th> <strong>  Name </strong> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration var="cell" items="{!v.contactRows}">
+                <tr>
+                    <td> <a href="{! '/'+cell.Id}"> {!cell.Id} </a> </td>
+                    <td> {!cell.Name}  </td>
+                </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+</div>
+</aura:component>

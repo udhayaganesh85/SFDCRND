@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="ContactDialButtonController">
+    
+     <ltng:require styles="{!$Resource.lds + '/salesforce-lightning-design-system-ltng'}"/>
+   <aura:attribute name="quote" type="QuoteDetail__c"/>
+ <div aria-labelledby="newquoteform">
+     
+     <form class="slds-form--inline">  
+    <div class="slds-form-element">
+        <lightning:input aura:id="quoteform" type="date" label="Start" name="startDate" value="{!v.rangeStart}"/>
+    </div>
+    <div class="slds-form-element">
+        <lightning:input aura:id="quoteform" type="date" label="End" name="endDate" value="{!v.rangeEnd}"/>
+    </div>
+</form>  
+     
+     
+     
+    </div> 
+
+</aura:component>

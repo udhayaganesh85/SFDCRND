@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" 
+controller="ContactDialButtonController" access="global" >
+  <aura:attribute name="contactPhone" type="String" default="0036A00000CDl3W" />
+  <aura:attribute name="message" type="String"/>
+  <aura:attribute name="Lstmessage" type="List"/>
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+  <aura:handler event="c:SearchEvent" action="{!c.searched}"/>
+  <p>Hello! {!uname} {!v.message}</p>
+  <aura:Iteration items="{!v.Lstmessage}" var="lmsg">
+    <p>{!lmsg}</p>
+  </aura:Iteration>
+  <aura:if isTrue="{!('1'=='0')}">
+    	EQUAL
+    <aura:set attribute="else">
+            NOT EQUAL 
+        </aura:set>
+  </aura:if>
+  <p>    <lightning:input type="text" label="Enter user name" name="uname" ></lightning:input> </p>
+  <lightning:button label="Cancel" onclick="{!c.doCancel}"/>
+  <lightning:button label="Exit" onclick="{!c.doCancel}"/>
+</aura:component>

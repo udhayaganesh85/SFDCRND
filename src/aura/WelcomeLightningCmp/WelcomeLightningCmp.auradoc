@@ -1,0 +1,6 @@
+<aura:documentation>
+	<aura:description>Documentation</aura:description>
+	<aura:example name="WelcomeLightningCmp" ref="WelcomeLightningCmp" label="Label">
+		This component pop Toast message
+	</aura:example>
+</aura:documentation>

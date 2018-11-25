@@ -1,0 +1,16 @@
+<apex:page standardController="case" extensions="caseExt" lightningStylesheets="false" showHeader="false" sidebar="false">
+   <apex:form >
+   <apex:messages />
+       <apex:pageBlock > 
+       <apex:pageBlockTable value="{!wrapper}" var="caseRec">
+           <apex:column > {!caseRec.wrpCaseObj.caseNumber } </apex:column>
+           <apex:column > {!caseRec.wrpCaseObj.Status} </apex:column>
+           <apex:column > {!caseRec.wrpCaseObj.Subject} </apex:column>
+           
+             <apex:column > <apex:inputText value="{!caseRec.cmt }"/> </apex:column>
+             </apex:pageBlockTable>
+             </apex:pageBlock>
+             <apex:commandButton action="{!saveCmt}" value="Save"/>
+       
+   </apex:form>
+</apex:page>

@@ -1,0 +1,5 @@
+<aura:event type="COMPONENT" description="Fired when a Contact search is completed">
+    <aura:attribute name="contacts" type="Contact[]" description="The result of the search, which could be an empty array"/>
+ 
+<aura:attribute name="message" type="String"/>
+</aura:event>

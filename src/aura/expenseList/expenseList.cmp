@@ -1,0 +1,16 @@
+<aura:component controller="ContactDialButtonController" 
+                implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes,force:hasRecordId" access="global" >
+<aura:attribute name="expenseName" type="String"/>
+
+    <aura:attribute name="expenses" type="Expense__c[]"/>
+Here is the list of contact
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+     <lightning:card title="Expenses">
+        <p class="slds-p-horizontal--small">
+            <aura:iteration items="{!v.expenses}" var="expense">
+                <c:expenseItem expense="{!expense}"/>
+            </aura:iteration>
+        </p>
+    </lightning:card>
+
+</aura:component>

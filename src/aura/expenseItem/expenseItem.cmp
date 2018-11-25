@@ -1,0 +1,36 @@
+<aura:component controller="ContactDialButtonController" >
+	 <aura:attribute name="expense" type="Expense__c"/>
+     <div aria-labelledby="newexpenseform">
+    <form class="slds-form--stacked">     
+        <lightning:card >
+            <lightning:input aura:id="expenseform" label="Expense Name"
+                             name="expensename"
+                             value="{!v.expense.Name}"
+                             required="true"/> 
+      
+    	<lightning:input type="number" aura:id="expenseform" label="Amount"
+                             name="expenseamount"
+                             min="0.1" formatter="currency" step="0.01"
+                             value="{!v.expense.Amount__c}"
+                             messageWhenRangeUnderflow="Enter an amount that's at least $0.10."/>
+            <lightning:input aura:id="expenseform" label="Client"
+                             name="expenseclient"
+                             value="{!v.expense.Client__c}"
+                             placeholder="ABC Co."/>
+            <lightning:input type="date" aura:id="expenseform" label="Expense Date"
+                             name="expensedate"
+                             value="{!v.expense.Date__c}"/>
+          <lightning:input aura:id="expenseform" label="Comments if any"
+                         name="expensecomments"
+                         value="{!v.expense.comments__c}"
+                         required="true"/> 
+            <lightning:input type="checkbox" aura:id="expenseform" label="Reimbursed?"  
+                             name="expreimbursed"
+                             checked="{!v.expense.Reimbursed__c}"/>
+            <lightning:button label="Save Expense" 
+                              class="slds-m-top--medium"
+                              variant="brand"
+                              
+                              onclick="{!c.clickCreate}"/>
+        </lightning:card>
+     </form></div></aura:component>

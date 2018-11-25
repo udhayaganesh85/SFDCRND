@@ -1,0 +1,44 @@
+<apex:page docType="html-5.0" applyHtmlTag="false" applyBodyTag="false"
+           showHeader="false" showChat="false" sidebar="false" standardStylesheets="false">
+ 
+<html>
+<head>
+<title>Climate Info</title>
+<script>document.write('<base href="' + document.location + '" />');</script> 
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<style>
+body {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+<script src="https://unpkg.com/core-js/client/shim.min.js"></script>
+<script src="https://unpkg.com/zone.js?main=browser"></script>
+<script src="https://unpkg.com/systemjs@0.19.39/dist/system.src.js"></script>
+<script src="{!URLFOR($Resource.Angular2_FirstApp, '/Angular2_FirstApp/systemjs.config.js')}" type="text/javascript"></script>
+ <script>
+function goBack() {
+    window.history.back();
+}
+</script>
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"></link>
+
+<script>
+     // System.import('{!URLFOR($Resource.Angular2_FirstApp, '/Angular2_FirstApp/main.ts')}').catch(function(err){ console.error(err); });
+      window.open=  '{!URLFOR($Resource.Angular2_FirstApp, '/Angular2_FirstApp/index.html')}';
+    </script>
+
+</head>
+<body>
+<div style="text-align:right">
+<a href="/apex/landingpage">Go Back</a>
+</div>
+ <apex:iframe src="{!URLFOR($Resource.Angular2_FirstApp, '/Angular2_FirstApp/index.html')}"/>
+  <!--  <center>
+        <h3>Everything is prewritten, nothing can be rewritten</h3>  
+    </center>
+    <my-app>Loading ... Please wait ...</my-app> -->
+</body>
+</html> 
+</apex:page>

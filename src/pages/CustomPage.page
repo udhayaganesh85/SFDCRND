@@ -1,0 +1,26 @@
+<apex:page controller="myController" tabStyle="Account" id="page">
+<script>
+function validateFunction(obj)
+{
+     var valType = document.getElementById( "page:form:pageBlock2:a1" ).value;
+     alert(valType );
+     
+      var valType1 = document.getElementById(obj).value;
+     alert(valType1 );
+      
+     
+} 
+</script><apex:form id="form">
+        
+<apex:actionFunction action="{!save}" name="accFn"/>
+    <apex:pageBlock title="Congratulations {!$User.FirstName}"  id="pageBlock2">
+
+            You belong to Account Name: <apex:inputField value="{!account.name}" id="a1"/>
+            Enter new Account name <apex:inputtext value="{!firstName }"   id="a2" /> 
+                       
+            <apex:commandButton value="save" onclick="validateFunction(this);" />
+ <apex:commandButton value="save" onclick="validateFunction('{!$Component.a2}')" />
+ 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
